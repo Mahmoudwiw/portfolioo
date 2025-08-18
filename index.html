@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahmoud Khalil | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{
+      --ink:#e5e7eb;
+      --muted:#94a3b8;
+      --brand:#0f172a;
+      --brand-2:#3b82f6;
+      --accent:#14b8a6;
+      --bg-1:#0b1220;
+      --bg-2:#111827;
+      --panel:rgba(255,255,255,.06);
+      --panel-strong:rgba(255,255,255,.1);
+      --border:rgba(255,255,255,.12);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --speed:300ms;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,Arial,sans-serif;color:var(--ink);line-height:1.6;
+      background:linear-gradient(180deg, var(--bg-1), var(--bg-2));}
+    .reveal{opacity:0;transform:translateY(30px);transition:all 0.6s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
+    header{padding:100px 16px 70px;text-align:center;background:linear-gradient(160deg,#0b1328,#0a1a2f);}
+    header h1{font-size:2.8rem;margin:0 0 8px;font-weight:700;color:#fff}
+    header p{opacity:.9;font-size:1.1rem;color:#cbd5e1}
+    .header-badges{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .badge{background:var(--panel-strong);border:1px solid var(--border);padding:8px 14px;border-radius:999px;font-size:.9rem;color:#e0f2fe;display:flex;align-items:center;gap:6px;transition:transform .3s ease,background .3s ease;animation:pulse 2.5s infinite}
+    .badge i{color:var(--accent)}
+    .badge:hover{transform:translateY(-3px) scale(1.05);background:rgba(20,184,166,.25)}
+    @keyframes pulse {
+      0%,100%{box-shadow:0 0 0 0 rgba(20,184,166,0.6)}
+      50%{box-shadow:0 0 12px 4px rgba(20,184,166,0.3)}
+    }
+    nav{position:sticky;top:0;z-index:50;background:rgba(8,14,24,.7);backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid var(--border)}
+    .nav-wrap{max-width:1100px;margin:auto;display:flex;gap:2px;justify-content:center}
+    nav a{color:#e2e8f0;text-decoration:none;padding:14px 18px;font-weight:600;transition:all .3s ease}
+    nav a:hover{background:rgba(59,130,246,.12);border-bottom:2px solid var(--brand-2);transform:translateY(-2px)}
+    section{padding:82px 0}
+    h2{text-align:center;font-size:1.6rem;margin-bottom:28px;color:#dbeafe}
+    h2 span{border-bottom:3px solid var(--accent);padding-bottom:6px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:all .3s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.45);background:var(--panel-strong)}
+    .pill{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .tag{background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.35);color:#99f6e4;padding:6px 10px;border-radius:999px;font-size:.8rem}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:12px;border:2px solid var(--accent);color:#ccfbf1;text-decoration:none;font-weight:700;transition:all .3s ease}
+    .btn:hover{background:var(--accent);color:#002b29;transform:translateY(-2px) scale(1.03);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+    .list{display:grid;gap:16px}
+    .item{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:all .3s ease}
+    .item:hover{transform:translateY(-3px);background:var(--panel-strong)}
+    .item h3{margin:0 0 6px;color:#bfdbfe}
+    .item .meta{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+    #backToTop{position:fixed;bottom:26px;right:26px;display:none;background:var(--accent);color:#002b29;border:none;padding:12px 14px;border-radius:50%;cursor:pointer;z-index:60; box-shadow:var(--shadow); transition:transform var(--speed) ease}
+    #backToTop:hover{transform:translateY(-2px) scale(1.1)}
+  </style>
+</head>
+<body>
+  <header class="reveal">
+    <h1>Mahmoud Khalil</h1>
+    <p>Accounting Student · Finance & Data Analytics · CIB Intern</p>
+    <div class="header-badges">
+      <span class="badge"><i class="fa-solid fa-university"></i> Mansoura University</span>
+      <span class="badge"><i class="fa-solid fa-briefcase"></i> CIB Summer Internship</span>
+      <span class="badge"><i class="fa-solid fa-file-excel"></i> MOS Excel Certified</span>
+      <span class="badge"><i class="fa-solid fa-chart-line"></i> Power BI & SQL</span>
+    </div>
+  </header>
+  <nav>
+    <div class="nav-wrap">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#volunteering">Volunteering</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> CV</a>
+    </div>
+  </nav>
+  <section id="about" class="reveal">
+    <div class="container">
+      <h2><span>About Me</span></h2>
+      <p style="max-width:800px;margin:auto;text-align:center">Accounting student at Mansoura University with hands-on experience in financial analysis and business data solutions. Skilled in <b>SQL</b>, <b>Python</b>, and <b>Excel (Power Query)</b>. Completed a <b>CIB Summer Internship</b> applying analytical and reporting skills in real banking operations. Passionate about leveraging data to drive financial insights and business growth.</p>
+    </div>
+  </section>
+  <section id="projects" class="reveal">
+    <div class="container">
+      <h2><span>Projects</span></h2>
+      <div class="grid">
+        <div class="card">
+          <h3>📊 Titanic Data Analysis Dashboard</h3>
+          <p>Built a dashboard on 891 passengers with visualizations revealing survival patterns by gender, class, age, and port of embarkation.</p>
+          <div class="pill">
+            <span class="tag">Excel</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Data Viz</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>🛒 Super Store Analysis For DEPI</h3>
+          <p>Interactive dashboard analyzing store performance with filters (Region, Segment, Ship Mode, Category). Showed KPIs, sales by region & sub-category, order delays, and trends from 2015–2018.</p>
+          <div class="pill">
+            <span class="tag">Excel</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">SQL (Basics)</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="reveal">
+    <div class="container">
+      <h2><span>Skills</span></h2>
+      <div class="grid">
+        <div class="card"><h3><i class="fa-solid fa-calculator"></i> Financial Analysis</h3><p>Accounting principles, variance analysis, reconciliation, and basic financial modeling.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-file-excel"></i> Excel (Advanced)</h3><p>Pivot tables, dashboards, Power Query; MOS Excel Certified.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-database"></i> Power BI & SQL</h3><p>Data cleaning, DAX measures, and queries for reporting.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-chart-line"></i> Data Visualization</h3><p>Clear dashboards for decision-making across KPIs.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-people-group"></i> Tools & Soft Skills</h3><p>Microsoft Office, Google Workspace, teamwork, communication.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-language"></i> Languages</h3><p>Arabic (Native), English (B2)</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="reveal">
+    <div class="container">
+      <h2><span>Experience</span></h2>
+      <div class="list">
+        <div class="item"><h3>CIB Egypt – Summer Internship Program</h3><div class="meta">Summer 2024</div><ul><li>Rotated across customer onboarding, compliance, and financial services.</li><li>Processed 20+ daily banking transactions ensuring accuracy and efficiency.</li><li>Supported KYC/AML checks for 15+ clients weekly.</li><li>Handled 30+ client inquiries contributing to smooth service delivery.</li></ul></div>
+        <div class="item"><h3>Work Egypt – Recruitment Assistant</h3><div class="meta">2024</div><ul><li>Reviewed 100+ candidate applications aligned with job descriptions.</li><li>Coordinated 50+ interviews across 5 departments using digital tools.</li><li>Organized records for 200+ applicants improving database efficiency.</li></ul></div>
+      </div>
+    </div>
+  </section>
+  <section id="education" class="reveal">
+    <div class="container">
+      <h2><span>Education</span></h2>
+      <div class="list">
+        <div class="item"><h3>Faculty of Commerce (English Section), Mansoura University</h3><div class="meta">B.Com in Accounting (In Progress) • Expected Graduation: 2027</div><p>Core focus on accounting principles with additional interest in data analysis and BI tools.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="certifications" class="reveal">
+    <div class="container">
+      <h2><span>Certifications</span></h2>
+      <div class="grid">
+        <div class="card"><h3>Aspire Leaders Program – Aspire Institute (2025)</h3><p>Completed all modules; selected for Extended Leadership Program (ELP).</p></div>
+        <div class="card"><h3>Emerging Talents for the Future Workplace – CIB (2024)</h3><p>Banking operations, customer service, soft skills, and Excel.</p></div>
+        <div class="card"><h3>Human-Centric Interpersonal Skills – Frankfurt School via CIB (2024)</h3><p>Workplace communication, empathy, and leadership practices.</p></div>
+        <div class="card"><h3>Virtual Assistant Program – ALX Africa (2024)</h3><p>Client communication, calendar/email handling, remote tools.</p></div>
+        <div class="card"><h3>Project Management Training – PMI × INJAZ Al-Arab (2024)</h3><p>Planning, resources, time management, and risk assessment.</p></div>
+        <div class="card"><h3>Customer Service Fundamentals – Business Hub Academy (2023)</h3><p>Conflict resolution and delivering client value.</p></div>
+        <div class="card"><h3>Soft Skills – Egyptian Banking Institute (2023)</h3><p>Communication, teamwork, and business etiquette.</p></div>
+        <div class="card"><h3>Microsoft Office Specialist (MOS) – Excel (2023)</h3><p>Advanced Excel functions, data tools, formatting.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="volunteering" class="reveal">
+    <div class="container">
+      <h2><span>Volunteering & Activities</span></h2>
+      <div class="grid">
+        <div class="card"><h3>Life Makers Foundation – Volunteer</h3><p>Supported 5+ charity and awareness campaigns; assisted with logistics and volunteer coordination (2023).</p></div>
+        <div class="card"><h3>University Activities</h3><p>Participated in 10+ workshops on leadership, communication, and team-building (ongoing).</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="reveal">
+    <div class="container">
+      <h2><span>Contact</span></h2>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn" href="mailto:Mahmoud.a.elmetwally@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a class="btn" href="tel:01286069577"><i class="fa-solid fa-phone"></i> Call</a>
+        <a class="btn" href="https://www.linkedin.com/in/mahmoud-khalill" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </section>
+  <button id="backToTop" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'inline-flex' : 'none';
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
